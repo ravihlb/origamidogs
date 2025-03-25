@@ -19,16 +19,45 @@
 
     <script type="text/babel">
 
-        function Button() {
-            const [total, setTotal] = React.useState(0);
-            return <button onClick={() => setTotal(total+1)}>Adicionar para: {total}</button>
+        // arrow functions are just a stylistic decision in most cases
+
+        const Button = () => {
+            return <button>Comprar</button>
         }
 
-        function App() {
+        const MainNav = () => {
+            return <nav>
+                <ul>
+                    <li>
+                        <a href="#">Link 1</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Link 2</a>
+                    </li>
+                </ul>
+            </nav>
+        }
+
+        const Products = () => {
+            const product1 = "T-Shirt";
+            const product2 = "Shorts";
+
+            function handleClick(event) {
+                console.log(`Clicked: ${event.target.innerText}`);
+            }
+
             return <div>
-                <h1>Aplicativo React</h1>
+                <button onClick={handleClick}>{product1} - R$ {Math.random() * 100}</button>
+                <button onClick={handleClick}>{product2} - R$ {Math.random() * 100}</button>
+            </div>
+        }
+
+        const App =() => {
+            return <div>
+                <MainNav />
                 <Button />
-                <Button />
+                <Products />
             </div>;
         }
 
