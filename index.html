@@ -15,4 +15,27 @@
 </head>
 
 <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function Button() {
+            const [total, setTotal] = React.useState(0);
+            return <button onClick={() => setTotal(total+1)}>Adicionar para: {total}</button>
+        }
+
+        function App() {
+            return <div>
+                <h1>Aplicativo React</h1>
+                <Button />
+                <Button />
+            </div>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+
+        root.render(<App />);
+        
+    </script>
 </body>
