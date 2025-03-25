@@ -53,11 +53,27 @@
             </div>
         }
 
+        const Purchase = () => {
+            const [count, setCount] = React.useState(5);
+            console.log(count);
+
+            function handleClick() {
+                setCount(count + 1);
+            }
+
+            return <div>
+                <button onClick={handleClick}>Buy: {count}</button>
+                <p>Total: {count}</p>
+                <p>Price: {count * 250}</p>
+                </div>
+        }
+
         const App =() => {
             return <div>
                 <MainNav />
                 <Button />
                 <Products />
+                <Purchase />
             </div>;
         }
 
