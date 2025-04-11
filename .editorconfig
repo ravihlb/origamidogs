@@ -1,4 +1,6 @@
 [*]
-quote_style = single
 indent_style = space
 indent_size = 2
+
+[*.{js,jsx,css}]
+quote_style = single
