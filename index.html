@@ -1,85 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React para Iniciantes</title>
-
-    <!-- Carrega o React, React Dom e Babel -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-
-    <!-- Don't use this in production: -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-</head>
-
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
     <div id="root"></div>
-
-    <script type="jsx">
-
-        // arrow functions are just a stylistic decision in most cases
-        const Button = () => {
-            return <button>Comprar</button>
-        }
-
-        const MainNav = () => {
-            return <nav>
-                <ul>
-                    <li>
-                        <a href="#">Link 1</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Link 2</a>
-                    </li>
-                </ul>
-            </nav>
-        }
-
-        const Products = () => {
-            const product1 = "T-Shirt";
-            const product2 = "Shorts";
-
-            function handleClick(event) {
-                console.log(`Clicked: ${event.target.innerText}`);
-            }
-
-            return <div>
-                <button onClick={handleClick}>{product1} - R$ {Math.random() * 100}</button>
-                <button onClick={handleClick}>{product2} - R$ {Math.random() * 100}</button>
-            </div>
-        }
-
-        const Purchase = () => {
-            const [count, setCount] = React.useState(5);
-            console.log(count);
-
-            function handleClick() {
-                setCount(count + 1);
-            }
-
-            return <div>
-                <button onClick={handleClick}>Buy: {count}</button>
-                <p>Total: {count}</p>
-                <p>Price: {count * 250}</p>
-                </div>
-        }
-
-        const App = () => {
-            return <div>
-                <MainNav />
-                <Button />
-                <Products />
-                <Purchase />
-            </div>;
-        }
-
-        const container = document.getElementById('root');
-        const root = ReactDOM.createRoot(container);
-
-        root.render(<App />);
-        
-    </script>
-</body>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
