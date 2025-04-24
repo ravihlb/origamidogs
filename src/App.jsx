@@ -1,7 +1,12 @@
-import React from "react";
+import React from 'react';
 
 const App = () => {
-	return <div>App React</div>;
+  return (
+    <>
+      <label htmlFor="nome">Nome</label>
+      <input type="text" id="nome" />
+    </>
+  );
 };
 
 export default App;
