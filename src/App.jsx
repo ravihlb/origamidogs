@@ -34,15 +34,6 @@ function somarTotalGasto(compras) {
   return soma;
 }
 
-function coloreStatus(status) {
-  return status ? { color: 'green' } : { color: 'red' };
-}
-
-function avisoDeGastoExcessivo(totalGasto) {
-  if (totalGasto < 1000) return;
-  return <p>Você está gastando muito.</p>;
-}
-
 const App = () => {
   const dados = mario;
   const totalGasto = somarTotalGasto(dados.compras);
@@ -52,13 +43,13 @@ const App = () => {
       <p>Nome: {dados.cliente}</p>
       <p>Idade: {dados.idade}</p>
       <p>
-        Situação:
-        <span style={coloreStatus(dados.ativa)}>
-          {dados.ativa ? ' Ativa' : ' Inativa'}
+        Situação:{' '}
+        <span style={{color: dados.ativa ? 'green' : 'red'}}>
+          {dados.ativa ? 'Ativa' : 'Inativa'}
         </span>
       </p>
       <p>Total gasto: R$ {totalGasto}</p>
-      {avisoDeGastoExcessivo(totalGasto)}
+      <p>{totalGasto > 10000 && 'Você está gastando muito.'}</p>
     </div>
   );
 };
